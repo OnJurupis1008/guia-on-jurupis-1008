@@ -18,4 +18,136 @@
     .wrap { max-width: 940px; margin: 0 auto; padding: 16px; }
     .brand { font-weight: 700; }
     nav { display:flex; gap: 12px; overflow-x:auto; padding: 8px 0; }
-    nav a {
+    nav a { white-space: nowrap; padding: 8px 12px; border:1px solid #2a2a2a; border-radius: 999px; font-size: 14px; }
+    section { padding: 28px 16px; scroll-margin-top: 76px; border-bottom: 1px solid #1c1c1c; }
+    h1,h2 { margin: 0 0 10px; }
+    h1 { font-size: 22px; }
+    h2 { font-size: 20px; }
+    p, li { color: var(--muted); }
+    ul { padding-left: 18px; }
+    .card { background:#0b0b0b; border:1px solid #1d1d1d; border-radius:14px; padding:14px; }
+    .cta-whats {
+      position: fixed; right: 16px; bottom: 16px; z-index: 10;
+      padding: 12px 14px; border-radius: 999px; border: 1px solid #2a2a2a; background:#0b0b0b;
+      box-shadow: 0 4px 18px rgba(0,0,0,.35); font-weight:600;
+    }
+    footer { padding: 40px 16px; color: #8a8a8a; text-align:center; font-size: 12px; }
+  </style>
+
+  <script>
+    // Scroll suave para âncoras
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href');
+          const el = document.querySelector(id);
+          if (el) {
+            e.preventDefault();
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="wrap">
+      <div class="brand">Guia • On Jurupis</div>
+      <nav aria-label="Seções do guia">
+        <a href="#boas-vindas">Boas-vindas</a>
+        <a href="#wifi">Wi-Fi</a>
+        <a href="#manual">Manual do apto</a>
+        <a href="#servicos">Serviços úteis</a>
+        <a href="#dicas">Dicas locais</a>
+        <a href="#transporte">Transporte</a>
+        <a href="#emergencias">Emergências</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="boas-vindas">
+      <h1>Bem-vindo(a) ao On Jurupis 🏠</h1>
+      <p>Este é o seu guia rápido do apartamento e da região. Use o menu acima para ir direto ao assunto.</p>
+      <div class="card">
+        <strong>Check-in/Check-out</strong>
+        <ul>
+          <li>Check-in: 15h | Check-out: 11h</li>
+          <li>Regras do prédio: silêncio após 22h, sem festas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="wifi">
+      <h2>Wi-Fi</h2>
+      <ul>
+        <li><strong>Rede:</strong> (preencher)</li>
+        <li><strong>Senha:</strong> (preencher)</li>
+      </ul>
+    </section>
+
+    <section id="manual">
+      <h2>Manual do apartamento</h2>
+      <ul>
+        <li>Ar-condicionado: (instruções simples)</li>
+        <li>Chuveiro: (temperatura/uso)</li>
+        <li>Lixo/reciclagem: (ponto de coleta/horários)</li>
+        <li>Check-out: (passos rápidos)</li>
+      </ul>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços úteis</h2>
+      <ul>
+        <li>🛒 Mercado: (nome) — (endereço) — <a href="#" target="_blank">Abrir no Maps</a></li>
+        <li>💊 Farmácia: (nome) — (endereço) — <a href="#" target="_blank">Abrir no Maps</a></li>
+        <li>🧺 Lavanderia: (nome) — (endereço) — <a href="#" target="_blank">Abrir no Maps</a></li>
+        <li>🍔 Delivery: iFood / Rappi</li>
+      </ul>
+    </section>
+
+    <section id="dicas">
+      <h2>Dicas locais</h2>
+      <ul>
+        <li>🍝 Restaurante X — breve descrição — <a href="#" target="_blank">Maps</a></li>
+        <li>☕ Café Y — breve descrição — <a href="#" target="_blank">Maps</a></li>
+        <li>🌳 Parque Z — breve descrição — <a href="#" target="_blank">Maps</a></li>
+      </ul>
+    </section>
+
+    <section id="transporte">
+      <h2>Transporte</h2>
+      <ul>
+        <li>Metrô mais próximo: (estação) — (linha) — <a href="#" target="_blank">Maps</a></li>
+        <li>Ponto de táxi/Uber pickup: (local sugerido)</li>
+        <li>Distâncias: Congonhas (~X min), Av. Paulista (~Y min), Ibirapuera (~Z min)</li>
+      </ul>
+    </section>
+
+    <section id="emergencias">
+      <h2>Emergências</h2>
+      <ul>
+        <li>Hospital: (nome) — <a href="#" target="_blank">Maps</a> — Tel.: (xx) xxxx-xxxx</li>
+        <li>Polícia: 190 | Bombeiros: 193</li>
+        <li>Suporte do anfitrião: (nome) — Whats: (link)</li>
+      </ul>
+    </section>
+
+    <section id="contato">
+      <h2>Contato rápido</h2>
+      <p>Se precisar de algo, fale conosco:</p>
+      <p><a href="https://wa.me/55SEUNUMERO?text=Olá%2C%20estou%20no%20On%20Jurupis%20e%20preciso%20de%20ajuda." class="card">Abrir WhatsApp</a></p>
+    </section>
+  </main>
+
+  <!-- Botão flutuante de WhatsApp (substitua SEUNUMERO por DDI+DDD+número) -->
+  <a class="cta-whats" href="https://wa.me/55SEUNUMERO?text=Olá%2C%20estou%20no%20On%20Jurupis" aria-label="Falar no WhatsApp">💬 Falar no Whats</a>
+
+  <footer>
+    Guia para hóspedes — On Jurupis • (não indexado por buscadores)
+  </footer>
+</body>
+</html>
