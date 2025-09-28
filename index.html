@@ -5,33 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Guia On Jurupis</title>
 
-  <!-- Evitar aparecer em buscadores -->
+  <!-- Evitar indexação -->
   <meta name="robots" content="noindex, nofollow" />
 
+  <!-- Paleta terrosa/creme -->
   <style>
-    /* Estilo simples, mobile-first */
-    :root { --bg:#111; --fg:#eaeaea; --muted:#b7b7b7; --accent:#8fb; }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; background:var(--bg); color:var(--fg); line-height:1.5; }
-    a { color: var(--accent); text-decoration: none; }
-    header { position: sticky; top: 0; z-index: 5; backdrop-filter: blur(6px); background: rgba(17,17,17,.8); border-bottom: 1px solid #222; }
-    .wrap { max-width: 940px; margin: 0 auto; padding: 16px; }
-    .brand { font-weight: 700; }
-    nav { display:flex; gap: 12px; overflow-x:auto; padding: 8px 0; }
-    nav a { white-space: nowrap; padding: 8px 12px; border:1px solid #2a2a2a; border-radius: 999px; font-size: 14px; }
-    section { padding: 28px 16px; scroll-margin-top: 76px; border-bottom: 1px solid #1c1c1c; }
-    h1,h2 { margin: 0 0 10px; }
-    h1 { font-size: 22px; }
-    h2 { font-size: 20px; }
-    p, li { color: var(--muted); }
-    ul { padding-left: 18px; }
-    .card { background:#0b0b0b; border:1px solid #1d1d1d; border-radius:14px; padding:14px; }
-    .cta-whats {
-      position: fixed; right: 16px; bottom: 16px; z-index: 10;
-      padding: 12px 14px; border-radius: 999px; border: 1px solid #2a2a2a; background:#0b0b0b;
-      box-shadow: 0 4px 18px rgba(0,0,0,.35); font-weight:600;
+    :root{
+      --bg:#FAF7F2;         /* creme de fundo */
+      --card:#FFFDF9;       /* cartão claro */
+      --ink:#2B2B2B;        /* texto principal */
+      --muted:#6F6A60;      /* texto secundário */
+      --accent:#7A5C3E;     /* marrom-terroso */
+      --border:#E6E0D6;     /* linhas suaves */
+      --shadow: 0 6px 20px rgba(42,32,22,.08);
     }
-    footer { padding: 40px 16px; color: #8a8a8a; text-align:center; font-size: 12px; }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      background:var(--bg); color:var(--ink); line-height:1.55;
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:var(--accent); text-decoration:none}
+    .wrap{max-width:960px;margin:0 auto;padding:16px}
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(250,247,242,.8); backdrop-filter:saturate(1.2) blur(8px);
+      border-bottom:1px solid var(--border);
+    }
+    .brand{font-weight:700; letter-spacing:.2px}
+    nav{display:flex; gap:10px; padding:10px 0; overflow-x:auto}
+    nav a{
+      white-space:nowrap; font-size:14px; padding:8px 12px;
+      border:1px solid var(--border); border-radius:999px; background:var(--card);
+      box-shadow: var(--shadow);
+    }
+    main{padding-top:6px}
+    section{padding:28px 16px; scroll-margin-top:92px; border-bottom:1px solid var(--border)}
+    h1,h2{margin:0 0 10px}
+    h1{font-size:22px}
+    h2{font-size:20px}
+    p,li{color:var(--muted)}
+    ul{padding-left:18px; margin:10px 0 0}
+    .card{
+      background:var(--card); border:1px solid var(--border); border-radius:16px; padding:14px;
+      box-shadow: var(--shadow);
+    }
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:#F2EDE6; color:#5A4633; border:1px solid var(--border); font-size:12px}
+    footer{padding:36px 16px; color:var(--muted); text-align:center; font-size:12px}
+    /* Acessibilidade: foco visível */
+    :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
   </style>
 
   <script>
@@ -41,113 +64,9 @@
         a.addEventListener('click', (e) => {
           const id = a.getAttribute('href');
           const el = document.querySelector(id);
-          if (el) {
-            e.preventDefault();
-            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
+          if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
         });
       });
     });
   </script>
 </head>
-<body>
-
-  <header>
-    <div class="wrap">
-      <div class="brand">Guia • On Jurupis</div>
-      <nav aria-label="Seções do guia">
-        <a href="#boas-vindas">Boas-vindas</a>
-        <a href="#wifi">Wi-Fi</a>
-        <a href="#manual">Manual do apto</a>
-        <a href="#servicos">Serviços úteis</a>
-        <a href="#dicas">Dicas locais</a>
-        <a href="#transporte">Transporte</a>
-        <a href="#emergencias">Emergências</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="wrap">
-    <section id="boas-vindas">
-      <h1>Bem-vindo(a) ao On Jurupis 🏠</h1>
-      <p>Este é o seu guia rápido do apartamento e da região. Use o menu acima para ir direto ao assunto.</p>
-      <div class="card">
-        <strong>Check-in/Check-out</strong>
-        <ul>
-          <li>Check-in: 15h | Check-out: 11h</li>
-          <li>Regras do prédio: silêncio após 22h, sem festas.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="wifi">
-      <h2>Wi-Fi</h2>
-      <ul>
-        <li><strong>Rede:</strong> (preencher)</li>
-        <li><strong>Senha:</strong> (preencher)</li>
-      </ul>
-    </section>
-
-    <section id="manual">
-      <h2>Manual do apartamento</h2>
-      <ul>
-        <li>Ar-condicionado: (instruções simples)</li>
-        <li>Chuveiro: (temperatura/uso)</li>
-        <li>Lixo/reciclagem: (ponto de coleta/horários)</li>
-        <li>Check-out: (passos rápidos)</li>
-      </ul>
-    </section>
-
-    <section id="servicos">
-      <h2>Serviços úteis</h2>
-      <ul>
-        <li>🛒 Mercado: (nome) — (endereço) — <a href="#" target="_blank">Abrir no Maps</a></li>
-        <li>💊 Farmácia: (nome) — (endereço) — <a href="#" target="_blank">Abrir no Maps</a></li>
-        <li>🧺 Lavanderia: (nome) — (endereço) — <a href="#" target="_blank">Abrir no Maps</a></li>
-        <li>🍔 Delivery: iFood / Rappi</li>
-      </ul>
-    </section>
-
-    <section id="dicas">
-      <h2>Dicas locais</h2>
-      <ul>
-        <li>🍝 Restaurante X — breve descrição — <a href="#" target="_blank">Maps</a></li>
-        <li>☕ Café Y — breve descrição — <a href="#" target="_blank">Maps</a></li>
-        <li>🌳 Parque Z — breve descrição — <a href="#" target="_blank">Maps</a></li>
-      </ul>
-    </section>
-
-    <section id="transporte">
-      <h2>Transporte</h2>
-      <ul>
-        <li>Metrô mais próximo: (estação) — (linha) — <a href="#" target="_blank">Maps</a></li>
-        <li>Ponto de táxi/Uber pickup: (local sugerido)</li>
-        <li>Distâncias: Congonhas (~X min), Av. Paulista (~Y min), Ibirapuera (~Z min)</li>
-      </ul>
-    </section>
-
-    <section id="emergencias">
-      <h2>Emergências</h2>
-      <ul>
-        <li>Hospital: (nome) — <a href="#" target="_blank">Maps</a> — Tel.: (xx) xxxx-xxxx</li>
-        <li>Polícia: 190 | Bombeiros: 193</li>
-        <li>Suporte do anfitrião: (nome) — Whats: (link)</li>
-      </ul>
-    </section>
-
-    <section id="contato">
-      <h2>Contato rápido</h2>
-      <p>Se precisar de algo, fale conosco:</p>
-      <p><a href="https://wa.me/55SEUNUMERO?text=Olá%2C%20estou%20no%20On%20Jurupis%20e%20preciso%20de%20ajuda." class="card">Abrir WhatsApp</a></p>
-    </section>
-  </main>
-
-  <!-- Botão flutuante de WhatsApp (substitua SEUNUMERO por DDI+DDD+número) -->
-  <a class="cta-whats" href="https://wa.me/55SEUNUMERO?text=Olá%2C%20estou%20no%20On%20Jurupis" aria-label="Falar no WhatsApp">💬 Falar no Whats</a>
-
-  <footer>
-    Guia para hóspedes — On Jurupis • (não indexado por buscadores)
-  </footer>
-</body>
-</html>
