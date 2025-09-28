@@ -1,72 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guia On Jurupis</title>
-
-  <!-- Evitar indexação -->
-  <meta name="robots" content="noindex, nofollow" />
-
-  <!-- Paleta terrosa/creme -->
-  <style>
-    :root{
-      --bg:#FAF7F2;         /* creme de fundo */
-      --card:#FFFDF9;       /* cartão claro */
-      --ink:#2B2B2B;        /* texto principal */
-      --muted:#6F6A60;      /* texto secundário */
-      --accent:#7A5C3E;     /* marrom-terroso */
-      --border:#E6E0D6;     /* linhas suaves */
-      --shadow: 0 6px 20px rgba(42,32,22,.08);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0}
-    body{
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
-      background:var(--bg); color:var(--ink); line-height:1.55;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
-    }
-    a{color:var(--accent); text-decoration:none}
-    .wrap{max-width:960px;margin:0 auto;padding:16px}
-    header{
-      position:sticky; top:0; z-index:10;
-      background:rgba(250,247,242,.8); backdrop-filter:saturate(1.2) blur(8px);
-      border-bottom:1px solid var(--border);
-    }
-    .brand{font-weight:700; letter-spacing:.2px}
-    nav{display:flex; gap:10px; padding:10px 0; overflow-x:auto}
-    nav a{
-      white-space:nowrap; font-size:14px; padding:8px 12px;
-      border:1px solid var(--border); border-radius:999px; background:var(--card);
-      box-shadow: var(--shadow);
-    }
-    main{padding-top:6px}
-    section{padding:28px 16px; scroll-margin-top:92px; border-bottom:1px solid var(--border)}
-    h1,h2{margin:0 0 10px}
-    h1{font-size:22px}
-    h2{font-size:20px}
-    p,li{color:var(--muted)}
-    ul{padding-left:18px; margin:10px 0 0}
-    .card{
-      background:var(--card); border:1px solid var(--border); border-radius:16px; padding:14px;
-      box-shadow: var(--shadow);
-    }
-    .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:#F2EDE6; color:#5A4633; border:1px solid var(--border); font-size:12px}
-    footer{padding:36px 16px; color:var(--muted); text-align:center; font-size:12px}
-    /* Acessibilidade: foco visível */
-    :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
-  </style>
-
-  <script>
-    // Scroll suave para âncoras
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', (e) => {
-          const id = a.getAttribute('href');
-          const el = document.querySelector(id);
-          if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'}); }
-        });
-      });
-    });
-  </script>
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Teste • On Jurupis</title>
+<style>
+  body{margin:0;background:#FAF7F2;font:18px/1.5 system-ui,Arial;color:#111}
+  .box{margin:24px;border:3px solid #7A5C3E;padding:24px;border-radius:16px;background:#FFFDF9}
+</style>
+<body>
+  <div class="box">
+    <h1>Deu certo? 👋</h1>
+    <p>Se você está vendo esta caixa, o site publica normal.</p>
+    <p>Depois voltamos com o guia “bonito”.</p>
+  </div>
+</body>
+</html>
