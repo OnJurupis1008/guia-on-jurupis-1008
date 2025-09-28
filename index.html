@@ -1,17 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teste • On Jurupis</title>
-<style>
-  body{margin:0;background:#FAF7F2;font:18px/1.5 system-ui,Arial;color:#111}
-  .box{margin:24px;border:3px solid #7A5C3E;padding:24px;border-radius:16px;background:#FFFDF9}
-</style>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Guia On Jurupis</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <style>
+    :root{
+      --bg:#FAF7F2; --card:#FFFDF9; --ink:#2B2B2B; --muted:#5E5A52;
+      --accent:#7A5C3E; --border:#E6E0D6; --shadow:0 6px 20px rgba(42,32,22,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{background:var(--bg); color:var(--ink);
+         font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:var(--accent); text-decoration:none}
+    .wrap{max-width:960px;margin:0 auto;padding:16px}
+    header{position:sticky; top:0; z-index:10;
+      background:rgba(250,247,242,.95); border-bottom:1px solid var(--border)}
+    .brand{font-weight:700; letter-spacing:.2px; padding-top:4px}
+    nav{display:flex; gap:10px; padding:10px 0; overflow-x:auto}
+    nav a{white-space:nowrap; font-size:14px; padding:8px 12px;
+      border:1px solid var(--border); border-radius:999px; background:var(--card); box-shadow:var(--shadow)}
+    main{padding-top:6px}
+    section{padding:28px 16px; scroll-margin-top:92px; border-bottom:1px solid var(--border)}
+    h1,h2{margin:0 0 12px; color:var(--ink)}
+    h1{font-size:24px} h2{font-size:20px}
+    p,li{color:var(--muted)} ul{padding-left:18px; margin:10px 0 0}
+    .card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:14px; box-shadow:var(--shadow)}
+    .pill{display:inline-block; padding:4px 10px; border-radius:999px; background:#F2EDE6; color:#5A4633; border:1px solid var(--border); font-size:12px}
+    footer{padding:36px 16px; color:var(--muted); text-align:center; font-size:12px}
+    :focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+  </style>
+  <script>
+    // Scroll suave (seguro mesmo se JS falhar, a página ainda mostra o conteúdo)
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+          const el = document.querySelector(a.getAttribute('href'));
+          if (el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+        });
+      });
+    });
+  </script>
+</head>
 <body>
-  <div class="box">
-    <h1>Deu certo? 👋</h1>
-    <p>Se você está vendo esta caixa, o site publica normal.</p>
-    <p>Depois voltamos com o guia “bonito”.</p>
-  </div>
+  <header>
+    <div class="wrap">
+      <div class="brand">Guia • On Jurupis</div>
+      <nav aria-label="Seções do guia">
+        <a href="#boas-vindas">Boas-vindas</a>
+        <a href="#manual">Manual básico</a>
+        <a href="#servicos">Serviços úteis</a>
+        <a href="#dicas">Dicas locais</a>
+        <a href="#transporte">Transporte</a>
+        <a href="#emergencias">Emergências</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="boas-vindas">
+      <h1>Bem-vindo(a) ao On Jurupis 🏠</h1>
+      <p>Guia rápido e superficial. Para qualquer necessidade, use o chat do Airbnb.</p>
+      <div class="card">
+        <strong>Essenciais</strong>
+        <ul>
+          <li><span class="pill">Check-in</span> a partir das 15h</li>
+          <li><span class="pill">Check-out</span> até 11h</li>
+          <li>Silêncio após 22h • sem festas • visitas sob consulta</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="manual">
+      <h2>Manual básico</h2>
+      <ul>
+        <li>Ar-condicionado e eletros: uso simples e intuitivo no painel.</li>
+        <li>Lixo: utilize as lixeiras indicadas no prédio (sinalização no térreo).</li>
+        <li>Ao sair: desligue luzes/ar; confira portas e janelas.</li>
+        <li><em>Senha do Wi-Fi disponível fisicamente no quarto (quadro informativo).</em></li>
+      </ul>
+    </section>
+
+    <section id="servicos">
+      <h2>Serviços úteis</h2>
+      <ul>
+        <li>🛒 Mercado — (nome) — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+        <li>💊 Farmácia — (nome) — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+        <li>🧺 Lavanderia — (nome) — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+        <li>🍔 Delivery: iFood / Rappi</li>
+      </ul>
+    </section>
+
+    <section id="dicas">
+      <h2>Dicas locais</h2>
+      <ul>
+        <li>🍝 Restaurante X — breve razão para ir — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+        <li>☕ Café Y — ótimo para manhã — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+        <li>🌳 Parque Z — bom para caminhada — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+      </ul>
+    </section>
+
+    <section id="transporte">
+      <h2>Transporte</h2>
+      <ul>
+        <li>Metrô: (estação / linha) — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+        <li>Ponto sugerido para Uber/táxi: (local)</li>
+        <li>Distâncias: Congonhas ~X min • Ibirapuera ~Y min • Paulista ~Z min</li>
+      </ul>
+    </section>
+
+    <section id="emergencias">
+      <h2>Emergências</h2>
+      <ul>
+        <li>Hospital: (nome) — <a href="#" target="_blank" rel="noopener">Maps</a></li>
+        <li>Polícia: 190 • Bombeiros: 193</li>
+        <li>Suporte: use o **chat do Airbnb**</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    Guia para hóspedes — On Jurupis • Conteúdo público e genérico (sem dados pessoais)
+  </footer>
 </body>
 </html>
